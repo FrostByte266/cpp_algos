@@ -3,13 +3,12 @@
 #include<bits/stdc++.h>
 
 void sieveAlgo(const int& n, std::vector<int>& vec);
+int parseToInt(const char* args[]);
 
-int main(){
-	std::cout << "Input the number to calculate up to" << std::endl << "> ";
-	int choice;
-	std::cin >> choice;
+int main(const int argc, const char * argv[]){
+	int maxVal = parseToInt(argv);
 	std::vector<int> primes;
-	sieveAlgo(choice, primes);
+	sieveAlgo(maxVal, primes);
 	/* Iteracte through the vector
 	if the current index is not the
 	last in the vecotr, output the
@@ -26,6 +25,20 @@ int main(){
 		}
 	}
 	return 0;
+}
+
+int parseToInt(const char* args[]){
+	/* This function will attempt to convert
+	the first command line argument to an integer,
+	if it fails, the program will exit, if not,
+	it will return the first argument as an integer */
+	try{
+		int choice = std::stoi(args[1]);
+		return choice;
+	}catch(const std::exception& e){
+		std::cout << "Argument could not be parsed, make sure you entered and integer!" << std::endl;
+		exit(1);
+	}
 }
 
 void sieveAlgo(const int& n, std::vector<int>& vec){
