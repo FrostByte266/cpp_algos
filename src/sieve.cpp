@@ -43,7 +43,7 @@ int parseToInt(const char* args[]){
 void sieveAlgo(const int& n, std::vector<int>& vec){
 	/* Create an vector of bools representing the index's
 	prime status (is prime of is not prime)
-	and then use memset to set every value to true */
+	and then initialize every value to true */
 	std::vector<bool> isPrime(n+1, true);
 	for(int p=2; p*p<=n; p++){
 		//If the current index is true, then it has to be a prime
