@@ -10,7 +10,7 @@ int main(const int argc, const char * argv[]){
 	sieveAlgo(maxVal, primes);
 	/* Iteracte through the vector
 	if the current index is not the
-	last in the vecotr, output the
+	last in the vector, output the
 	value, and append a comma and
 	a space, and print the next
 	if the current index is the last
@@ -42,7 +42,7 @@ int parseToInt(const char* args[]){
 
 void sieveAlgo(const int& n, std::vector<int>& vec){
 	/* Create an vector of bools representing the index's
-	prime status (is prime of is not prime)
+	prime status (is prime or it is not prime)
 	and then initialize every value to true */
 	std::vector<bool> isPrime(n+1, true);
 	for(int p=2; p*p<=n; p++){
