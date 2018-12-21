@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include<bits/stdc++.h>
 
 void sieveAlgo(const int& n, std::vector<int>& vec);
 int parseToInt(const char* args[]);
@@ -42,13 +41,13 @@ int parseToInt(const char* args[]){
 }
 
 void sieveAlgo(const int& n, std::vector<int>& vec){
-	/* Create an array of to represent if the index is prime
-	and then use memset to set every value to false */
-	bool prime[n+1];
-	memset(prime, true, sizeof(prime));
+	/* Create an vector of bools representing the index's
+	prime status (is prime of is not prime)
+	and then use memset to set every value to true */
+	std::vector<bool> isPrime(n+1, true);
 	for(int p=2; p*p<=n; p++){
 		//If the current index is true, then it has to be a prime
-		if(prime[p]){
+		if(isPrime[p] == true){
 			for(int i=p*2; i<=n; i+=p){
 				/* Eliminate all numbers
 				that are multiples of p
@@ -57,7 +56,7 @@ void sieveAlgo(const int& n, std::vector<int>& vec){
 				numbers which are less than
 				p squared have already been 
 				processed */
-				prime[i]=false;
+				isPrime[i]=false;
 			}
 		}
 	}
@@ -66,7 +65,7 @@ void sieveAlgo(const int& n, std::vector<int>& vec){
 	add it to the vector passed into
 	the function */
 	for (int p=2; p<=n; p++){
-		if(prime[p]){
+		if(isPrime[p]){
 			vec.push_back(p);
 		}
 	}
