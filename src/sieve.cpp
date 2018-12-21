@@ -42,8 +42,8 @@ int parseToInt(const char* args[]){
 }
 
 void sieveAlgo(const int& n, std::vector<int>& vec){
-	//Create an array of to represent if the index is prime
-	//and then use memset to set every value to false
+	/* Create an array of to represent if the index is prime
+	and then use memset to set every value to false */
 	bool prime[n+1];
 	memset(prime, true, sizeof(prime));
 	for(int p=2; p*p<=n; p++){
@@ -53,9 +53,10 @@ void sieveAlgo(const int& n, std::vector<int>& vec){
 				/* Eliminate all numbers
 				that are multiples of p
 				and are greater than or
-				equal to the square
+				equal to the square of p,
 				numbers which are less than
-				p squared have already been */
+				p squared have already been 
+				processed */
 				prime[i]=false;
 			}
 		}
