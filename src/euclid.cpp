@@ -3,7 +3,7 @@
 int euclidAlgo(const int& lhs, const int& rhs);
 int parseToInt(const char* args[], const int& argNum);
 
-int main(){
+int main(const int argc, const char* argv[]){
 	int lhs, rhs;
 	lhs = parseToInt(argv, 1);
 	rhs = parseToInt(argv, 2);
