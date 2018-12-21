@@ -22,7 +22,7 @@ int main(const int argc, const char* argv[]){
 	outputVector(numbers);
 	//Apply bubble sort and print it
 	bubbleSort(numbers);
-	std::cout << "Sorted with vector: ";
+	std::cout << "Sorted Vector: ";
 	outputVector(numbers);
 	return 0;
 }
