@@ -38,12 +38,11 @@ void sieveAlgo(const int& n, std::vector<int>& vec){
 		if(prime[p]){
 			for(int i=p*2; i<=n; i+=p){
 				/* Eliminate all numbers
-				that are multiples of p
-				and are greater than or
-				equal to the square
-				numbers which are less than
-				p squared have already been
-				marked */
+				//that are multiples of p
+				//and are greater than or
+				//equal to the square
+				//numbers which are less than
+				//p squared have already been */
 				prime[i]=false;
 			}
 		}
