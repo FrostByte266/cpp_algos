@@ -7,16 +7,14 @@ int main(const int argc, const char* argv[]){
 	int lhs, rhs;
 	lhs = parseToInt(argv, 1);
 	rhs = parseToInt(argv, 2);
-	std::cout << euclidAlgo(lhs, rhs) <<std::endl;
+	std::cout << "The GCD of " << lhs << " and " << rhs << " is: " << euclidAlgo(lhs, rhs) << std::endl;
 	return 0;
 }
 
 int euclidAlgo(const int& lhs, const int& rhs){
 	if (lhs == 0){
-		std::cout << "---------" << std::endl << "The answer is: ";
 		return rhs;
 	}else{
-		std::cout << "---------" << std::endl << "Number A: " << lhs << std::endl << "Number B: " << rhs << std::endl;
 		return euclidAlgo(rhs % lhs, lhs);
 	}
 }
