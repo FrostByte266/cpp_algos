@@ -8,12 +8,12 @@ int main(const int argc, const char * argv[]){
 	int maxVal = parseToInt(argv);
 	std::vector<int> primes;
 	sieveAlgo(maxVal, primes);
-	/* Iteracte through the vector
+	/* Iteracte through the vector,
 	if the current index is not the
 	last in the vector, output the
-	value, and append a comma and
-	a space, and print the next
-	if the current index is the last
+	value, append a comma and
+	a space, and print the next.
+	If the current index is the last
 	then just print its value and
 	and end the cuurent line */
 	for(int i=0; i<primes.size(); ++i){
@@ -54,7 +54,7 @@ void sieveAlgo(const int& n, std::vector<int>& vec){
 				and are greater than or
 				equal to the square of p,
 				numbers which are less than
-				p squared have already been 
+				p squared have already been
 				processed */
 				isPrime[i]=false;
 			}
