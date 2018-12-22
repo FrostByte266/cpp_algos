@@ -4,17 +4,19 @@ int euclidAlgo(const int& lhs, const int& rhs);
 int parseToInt(const char* args[], const int& argNum);
 
 int main(const int argc, const char* argv[]){
+	//Read inputs from command line
 	int lhs, rhs;
 	lhs = parseToInt(argv, 1);
 	rhs = parseToInt(argv, 2);
+	//Run the algorithim and print results
 	std::cout << "The GCD of " << lhs << " and " << rhs << " is: " << euclidAlgo(lhs, rhs) << std::endl;
 	return 0;
 }
 
 int euclidAlgo(const int& lhs, const int& rhs){
-	if (lhs == 0){
+	if (lhs == 0){ //If there is no remainder, it has been reduced all the way
 		return rhs;
-	}else{
+	}else{ //If there is, run it again with the remainder as the right hand side
 		return euclidAlgo(rhs % lhs, lhs);
 	}
 }
