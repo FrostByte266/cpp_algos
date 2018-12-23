@@ -10,18 +10,18 @@ void outputVector(std::vector<int>& vec);
 int parseToInt(const char* args[]);
 
 int main(const int argc, const char* argv[]){
-	//Seed random number
+	//Initialize random number generator
 	srand(time(nullptr));
 	//Get the number of vector elements from args array
 	int size = parseToInt(argv);
 	//Create a vector and fill it with random numbers
 	std::vector<int> numbers;
-	//Fill vector with random numbers and print it
+    populateVector(numbers, size);
 	std::cout << "Unsorted vector: ";
-	populateVector(numbers, size);
 	outputVector(numbers);
-	//Apply bubble sort and print it
+	//Apply bubble sort algorithm
 	bubbleSort(numbers);
+	//Print out the sorted vector
 	std::cout << "Sorted Vector: ";
 	outputVector(numbers);
 	return 0;
