@@ -10,7 +10,7 @@ void outputVector(std::vector<int>& vec);
 int parseToInt(const char* args[]);
 
 int main(const int argc, const char* argv[]){
-	//Seed randon number
+	//Seed random number
 	srand(time(nullptr));
 	//Get the number of vector elements from args array
 	int size = parseToInt(argv);
@@ -51,9 +51,9 @@ void populateVector(std::vector<int>& vec, const int& limit){
 
 void outputVector(std::vector<int>& vec){
 	/* Iterate through the vector, if the index
-	isnt't the last one in the vector, output it, and
-	a comma, if it is the last one, then just ouput the
-	value and a newline */ 
+	isn't the last one in the vector, output it, and
+	a comma, if it is the last one, then just output the
+	value and a newline */
 	for(int i=0; i<vec.size(); ++i){
 		if(i != vec.size()-1){
 			std::cout << vec[i] << ", ";

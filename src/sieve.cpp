@@ -8,14 +8,14 @@ int main(const int argc, const char * argv[]){
 	int maxVal = parseToInt(argv);
 	std::vector<int> primes;
 	sieveAlgo(maxVal, primes);
-	/* Iteracte through the vector,
+	/* Iterate through the vector,
 	if the current index is not the
 	last in the vector, output the
 	value, append a comma and
 	a space, and print the next.
 	If the current index is the last
 	then just print its value and
-	and end the cuurent line */
+	and end the current line */
 	for(int i=0; i<primes.size(); ++i){
 		if(i != primes.size()-1){
 			std::cout << primes[i] << ", ";

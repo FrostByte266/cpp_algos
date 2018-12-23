@@ -8,7 +8,7 @@ int main(const int argc, const char* argv[]){
 	int lhs, rhs;
 	lhs = parseToInt(argv, 1);
 	rhs = parseToInt(argv, 2);
-	//Run the algorithim and print results
+	//Run the algorithm and print results
 	std::cout << "The GCD of " << lhs << " and " << rhs << " is: " << euclidAlgo(lhs, rhs) << std::endl;
 	return 0;
 }
