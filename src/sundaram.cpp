@@ -45,22 +45,22 @@ void sieveOfSundaram(const int& n, std::vector<int>& vec){
 	/* The algorithim will return all primes smaller than
 	(2*x+2), so to get the inital number, it must be (n-2)/2 */
 	int newN = (n-2)/2;
-	/* Here we create a vector of bools, and set them all to false,
+	/* Here we create a vector of bools, and set them all to true,
 	this will help later to determine if a number is of the form i+j+2*i*j */
-	std::vector<bool> isPrime(newN+1, false);
+	std::vector<bool> isPrime(newN+1, true);
 	/* Recursively mark off numbers who are of the form i+j+2*i*j */
 	for(int i=1; i<=newN; i++){
 		for(int j=i; (i+j+2*i*j) <= newN; j++){
-			isPrime[i+j+2*i*j] = true;
+			isPrime[i+j+2*i*j] = false;
 		}
 	}
 	/* Two is known to be prime for cetrain,
 	so it is added to the list */
 	vec.push_back(2);
-	/* Primes take the form 2*i+1 instead of i+j+2*i*j, so anywhere that
-	isnt marked is prime, and it is added into the list of pirmes */
+	/* Primes take the form 2*i+1 instead of i+j+2*i*j, so any index that
+	is marked is true is prime, and it is added into the list of pirmes */
 	for(int i=1; i<=newN; i++){
-		if(isPrime[i] == false){
+		if(isPrime[i]){
 			vec.push_back(2*i+1);
 		}
 	}

@@ -47,7 +47,7 @@ void sieveAlgo(const int& n, std::vector<int>& vec){
 	std::vector<bool> isPrime(n+1, true);
 	for(int p=2; p*p<=n; p++){
 		//If the current index is true, then it has to be a prime
-		if(isPrime[p] == true){
+		if(isPrime[p]){
 			for(int i=p*2; i<=n; i+=p){
 				/* Eliminate all numbers
 				that are multiples of p
