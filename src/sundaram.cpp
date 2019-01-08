@@ -58,7 +58,7 @@ void sieveOfSundaram(const int& n, std::vector<int>& vec){
 	so it is added to the list */
 	vec.push_back(2);
 	/* Primes take the form 2*i+1 instead of i+j+2*i*j, so any index that
-	is marked is true is prime, and it is added into the list of pirmes */
+	is marked as true is prime, and it is added into the list of pirmes */
 	for(int i=1; i<=newN; i++){
 		if(isPrime[i]){
 			vec.push_back(2*i+1);
