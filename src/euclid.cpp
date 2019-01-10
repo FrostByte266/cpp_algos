@@ -16,7 +16,7 @@ int main(const int argc, const char* argv[]){
 int euclidAlgo(const int& lhs, const int& rhs){
 	if (lhs == 0){ //If there is no remainder, it has been reduced all the way
 		return rhs;
-	}else{ //If there is, run it again with the remainder as the right hand side
+	}else{ //If there is, run it again
 		return euclidAlgo(rhs % lhs, lhs);
 	}
 }
