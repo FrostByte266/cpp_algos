@@ -16,7 +16,7 @@ int main(const int argc, const char* argv[]){
 	int size = parseToInt(argv);
 	//Create a vector and fill it with random numbers
 	std::vector<int> numbers;
-    populateVector(numbers, size);
+	populateVector(numbers, size);
 	std::cout << "Unsorted vector: ";
 	outputVector(numbers);
 	//Apply bubble sort algorithm
