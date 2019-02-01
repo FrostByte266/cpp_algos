@@ -16,8 +16,7 @@ int parseToInt(const char* args[]){
 	}
 }
 
-void merge(int arr[], int l, int m, int r) 
-{ 
+void merge(int arr[], int l, int m, int r){ 
     int i, j, k; 
     int n1 = m - l + 1; 
     int n2 =  r - m; 
@@ -26,49 +25,42 @@ void merge(int arr[], int l, int m, int r)
     int L[n1], R[n2]; 
   
     //Copy array to temps
-    for (i = 0; i < n1; i++) 
+    for (i = 0; i < n1; i++){
         L[i] = arr[l + i]; 
-    for (j = 0; j < n2; j++) 
+	}
+    for (j = 0; j < n2; j++){ 
         R[j] = arr[m + 1+ j]; 
-  
+	}
     //Start merging the two
     i = 0;
     j = 0; 
     k = l;
-    while (i < n1 && j < n2) 
-    { 
-        if (L[i] <= R[j]) 
-        { 
+    while (i < n1 && j < n2){ 
+        if (L[i] <= R[j]){ 
             arr[k] = L[i]; 
             i++; 
-        } 
-        else
-        { 
+        }else{ 
             arr[k] = R[j]; 
             j++; 
         } 
         k++; 
     } 
   
-    while (i < n1) 
-    { 
+    while (i < n1){ 
         arr[k] = L[i]; 
         i++; 
         k++; 
     } 
   
-    while (j < n2) 
-    { 
+    while (j < n2){ 
         arr[k] = R[j]; 
         j++; 
         k++; 
     } 
 } 
   
-void mergeSort(int arr[], int l, int r) 
-{ 
-    if (l < r) 
-    { 
+void mergeSort(int arr[], int l, int r){ 
+    if (l < r){ 
 		//Find the middle
         int m = l+(r-l)/2; 
   
@@ -80,8 +72,7 @@ void mergeSort(int arr[], int l, int r)
     } 
 } 
   
-void printArray(int A[], int size) 
-{ 
+void printArray(int A[], int size){ 
     int i; 
     for (i=0; i < size; i++)
 		if(i != size - 1){
@@ -91,8 +82,7 @@ void printArray(int A[], int size)
 		}
 } 
   
-int main(const int argc, const char* argv[]) 
-{
+int main(const int argc, const char* argv[]){
 	//Get the size of the array from argv
 	int size = parseToInt(argv);
 	//Fill array with random numbers
